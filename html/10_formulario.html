@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>formulario html</title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <!-- datos personales -->
+      <fieldset>
+
+            <legend><h4>Datos personales</h4></legend>
+            <label for="nombre">nombre completo</label>
+            <input type="text" id="nombre" placeholder="Nombre">
+            <br>
+            <br>
+            <label for="genero">seleccione genero  </label>
+
+              <select id="genero">
+                <option value="">Selecione...</option>
+                <option value="M">masculino</option>
+                <option value="F">femenino</option>
+              </select>
+              <br>
+              <br>
+              <label for="clave">contraseña:</label>
+              <input type="password" id="clave">
+              <br>
+              <br>
+              <label for="descripcion">descripcion</label>
+              <br>
+              <br>
+              <textarea name="name" rows="8" cols="80"></textarea>
+      </fieldset>
+
+      <!--  datos institucionales-->
+      <fieldset>
+        seleccion una titulacion
+          <legend><h4>Datos isntitucionales</h4></legend>
+          <label for="">
+            <input type="radio" name="titulacion">tgo motores diesel <!-- hace que se selecione uno porque tienen el mismo name -->
+          </label>
+          <br>
+          <label for="">
+              <input type="radio" name="titulacion">tgo adsi
+            </label>
+            <br>
+            <label for="">
+                <input type="radio" name="titulacion">tgo desarrollo grafico
+            </label>
+            <br>
+            <label for="">
+
+              <input type="radio" name="titulacion">tgo motores soldadura
+            </label>
+            <br>
+            <br>
+            selecione trasverlsales favoritas
+            <br>
+            <label>
+            <input type="checkbox">ingles
+            </label>
+            <br>
+            <label>
+            <input type="checkbox">cultura fisica
+            </label>
+            <br>
+            <label>
+            <input type="checkbox">ambiental
+            </label>
+            <br>
+            <label>
+            <input type="checkbox">etica
+            </label>
+            <br>
+            <br>
+            <label for="foto">
+              <input type="file"id="foto" accept="image/*">
+            </label>
+            <br><br>
+            <input type="submit" name="" value="enviar datos">
+            <input type="reset" name="" value="limpiar datos">
+
+      </fieldset>
+    </form>
+  </body>
+</html>

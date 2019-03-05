@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>canvas HTML5</title>
+  </head>
+  <body>
+    <label for="">cuadrado</label>
+    <canvas id="cuadrado">cuadrado</canvas>
+       <script>
+        var canvas = document.getElementById('cuadrado');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle='#f00';
+        ctx.fillRect(0,0,100,100);
+      </script>
+  <label for="">rectangulo</label>
+      <canvas id="dibuja" width="855" height="315"></canvas>
+      <script type="text/javascript">
+      var canvas=document.getElementById("dibuja");
+      var ctx=canvas.getContext('2d');
+
+      ctx.rect(188, 100, 200, 100);
+      ctx.fillStyle = '#ffe33a';
+      ctx.fill();
+      ctx.lineWidth = 7;
+      ctx.strokeStyle = '#4388cc';
+      ctx.stroke();
+  </script>
+<label for="">triangulo</label>
+  <canvas id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById('canvas');
+    if (canvas.getContext){
+      var ctx = canvas.getContext('2d');
+
+      ctx.beginPath();
+      ctx.moveTo(10,110);
+      ctx.lineTo(110,10);
+      ctx.lineTo(210,110);
+      ctx.fill();
+    }
+    </script>
+<label for="">circulo</label>
+    <canvas width="600" height="300" id="mipanel"></canvas>
+    <script>
+    		var miLienzo = document.getElementById("mipanel");
+    		var lapiz = miLienzo.getContext("2d");
+    		lapiz.beginPath();
+    		lapiz.arc(300,150,80, 0, 2*Math.PI);
+    		lapiz.fill();
+    		lapiz.stroke();
+    </script>
+
+<label for="">texto</label>
+<br><br><br>
+    <canvas width="400" height="600" id="mipanel"></canvas>
+    <script>
+    var papel = document.getElementById("mipanel");
+    var lapiz = papel.getContext("2d");
+    lapiz.font = "italic 60px Arial";
+    lapiz.fillStyle = "RGBA(0, 0, 252, 0.3)";
+    lapiz.fillText("Aquí estoy ya",10,50);
+    </script>
+
+    // inicia el canvas
+const c = document.getElementById("canv");
+const ctx = c.getContext("2d");
+const cw = (c.width = 200);
+const ch = (c.height = 200);
+const cx = cw / 2,
+  cy = ch / 2;
+// define el grosor de línea
+ctx.lineWidth = 4;
+// define el color de línea
+ctx.strokeStyle = "crimson";
+
+
+// el algoritmo del corazón
+function corazon(r, paso) {
+  let puntos = [];
+  for (var a = 0; a < 2 * Math.PI; a += paso) {
+    let p = {};
+    p.x = cx + 16 * r * (Math.sin(a) * Math.sin(a) * Math.sin(a));
+    p.y =
+      cy -
+      13 * r * Math.cos(a) +
+      5 * r * Math.cos(2 * a) +
+      2 * r * Math.cos(3 * a) +
+      1 * r * Math.cos(4 * a);
+    puntos.push(p);
+  }
+  return puntos;
+}
+
+
+
+function dibujarCorazonEnCanvas() {
+  // crea un array vacío para guardar los puntos
+  let puntos = corazon(5, 0.05);
+  // empieza el trazado
+  ctx.beginPath();
+  // mueve el puntero al primer punto del array
+  ctx.moveTo(puntos[0].x, puntos[0].y);
+  // dibuja el corazon
+  puntos.forEach(p => {
+    ctx.lineTo(p.x, p.y);
+  });
+  // cierra el trazado
+  ctx.closePath();
+  // dibuja el corazón
+  ctx.stroke();
+}
+
+
+dibujarCorazonEnCanvas();
+canvas{
+  border: 1px solid #d9d9d9;
+}
+<canvas id='canv'></canvas>
+
+  </body>
+</html>
