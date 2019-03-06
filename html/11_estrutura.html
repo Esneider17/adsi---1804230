@@ -6,6 +6,8 @@
 
   </head>
   <body>
+<form>
+
 
     <div id="contenedor">
 
@@ -17,14 +19,14 @@
 
       <div class="contenido">
 
-      <fieldset>
-        <legend>INGRESE DATOS DE LA RESERVACION :</legend>
-        <br><br>
+        <fieldset>
+          <legend><strong>INGRESE DATOS PERSONALES :</strong></legend>
+          <br><br>
         <label for="nombre">INGRESE NOMBRE : </label>
           <input type="text" name="" value="" placeholder="nombre">
           <br><br>
           <label for="apellido">INGRESE APELIIDO : </label>
-            <input type="text" name="" value="" placeholder="nombre">
+            <input type="text" name="" value="" placeholder="apellido">
           <br><br>
           <label for="">SELECCIONE SU GENERO :</label>
 
@@ -33,26 +35,39 @@
             <option value="mujer">femenino</option>
           </select>
           <br><br>
-            <h4>SELECIONE SU NIVEL DE ESTUDIO</h4>
-            <label for="">
-              <input type="radio" name="titulacion">PROFESIONAL <!-- hace que se selecione uno porque tienen el mismo name -->
+          <h4>SELECIONE SU NIVEL DE ESTUDIO</h4>
+          <label for="">
+            <input type="radio" name="titulacion">PROFESIONAL <!-- hace que se selecione uno porque tienen el mismo name -->
+          </label>
+          <br>
+          <label for="">
+              <input type="radio" name="titulacion">TECNOLOGO
             </label>
             <br>
             <label for="">
-                <input type="radio" name="titulacion">TECNOLOGO
-              </label>
-              <br>
-              <label for="">
-                  <input type="radio" name="titulacion">TECNICO
-              </label>
-              <br>
-              <label for="">
-                  <input type="radio" name="titulacion">ESTUDIANTE
-              </label>
-              <br>
-              <label for="">
-                  <input type="radio" name="titulacion">APRENDIZ
-              </label>
+                <input type="radio" name="titulacion">TECNICO
+            </label>
+            <br>
+            <label for="">
+                <input type="radio" name="titulacion">ESTUDIANTE
+            </label>
+            <br>
+            <label for="">
+                <input type="radio" name="titulacion">APRENDIZ
+            </label>
+          </fieldset>
+          <br><br>
+
+      <fieldset>
+        <legend><strong>INGRESE DATOS DE LA RESERVACION</strong></legend>
+        <br><br>
+
+
+              <h3>SELECIONE FECHA DE INGRESO</h3>
+              <input type="date" name="" value="">
+              <br><br>
+              <h3>INGRESE NUMERO DE DIAS DE HOSPEDAJE</h3>
+              <input type="number" name="" value="">
               <br><br><br>
               <label for="">SELECCIONE FOTO !
                   <input type="file" name="titulacion">
@@ -77,6 +92,7 @@
 
     </div>
 
+  </form>
 
   </body>
 </html>
