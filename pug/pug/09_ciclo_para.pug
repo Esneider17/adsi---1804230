@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  title ciclo para
+body
+    h1 ciclo para
+    ul
+    -for (var i = 0; i<=20; i++)
+        li Elemento #{i}
+        
+    table(border="1")
+        -for(var tr = 1; tr <= 5; tr++)
+        
+          tr
+          
+            -for(var td= 1; td<= 10; td++)
+                td F#{tr} C#{td}
+    
+  
