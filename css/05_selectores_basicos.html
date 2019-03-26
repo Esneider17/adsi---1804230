@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>selectores basicos</title>
+      <h1>selectores basicos</h1>
+    <ol class="menu">
+      <li id="opt1">universales(*)</li>
+      <li id="opt2">etiqueta(p)</li>
+      <li>decendente(ol li)</li>
+      <li>clase(.)</li>
+      <li>ID(#)</li>
+      <li>combinado</li>
+    </ol>
+    <style>
+      /* universales */
+      *{
+        border: 1px solid gray;
+        font-family:arial;
+       }
+      /* selectores por etiqueta */
+      li{
+        background-color:teal;
+        margin:4px;
+        }
+        /* selectores por desendencia */
+        ol li{
+
+          border-bottom: 4px solid lime;
+        }
+        /* selectores por clase */
+        .menu{
+
+          border: 4px docted pink;
+        }
+        /* selectores por identificacion */
+        #opt1{
+          background-color:orange;
+        }
+        /* selectores combinado */
+        ol.menu li#opt2{
+          background-color:yellow;
+          font-size:2em;
+        }
+
+    </style>
+  </head>
+  <body>
+
+  </body>
+</html>
