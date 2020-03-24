@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('usuarios', function () {
+    $users=App\User::take(50)->get();
+    foreach($users as $user){
+      echo "<li>",$user->fullname."</li>";
+    }
+});
+
+Route::get('categorias', function () {
+    $categories=App\Category::take(50)->get();
+    foreach($categories as $categori){
+      echo "<li>",$categori->name."</li>";
+    }
+});
+Route::get('articulos', function () {
+    $articles=App\Article::take(50)->get();
+    foreach($articles as $arts){
+      echo "<li>",$arts->title."</li>";
+    }
+});
+
+Route::resource('users', 'UserController');
