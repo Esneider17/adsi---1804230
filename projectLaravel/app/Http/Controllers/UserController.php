@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -44,12 +45,13 @@ class UserController extends Controller
         $user->birthdate = $request->birthdate;
         $user->gender    = $request->gender;
         $user->address   = $request->address;
-        $user->password  = bcrypt($request['password']);
+        $user->password  = bcrypt($request->password);
+        $user->remember_token = Str::random(10);
 
-        if($user->save()) {
-          return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue adicionado con exito');
-        }
-    }
+          if($user->save()) {
+              return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue adicionado con Exito!');
+          }
+      }
 
     /**
      * Display the specified resource.
@@ -59,7 +61,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+      $user = User::findOrFail($id);
+        //dd($user);
+        return view('users.show')->with('user', $user);
     }
 
     /**
@@ -70,7 +74,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+      $user = User::findOrFail($id);
+        //return view('users.edit', compact ('user'));
+        return view('users.edit')->with('user', $user);
+
+
     }
 
     /**
@@ -82,8 +90,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $user = User::findOrFail($id);
+      $user->fullname  = $request->fullname;
+      $user->email     = $request->email;
+      $user->phone     = $request->phone;
+      $user->birthdate = $request->birthdate;
+      $user->gender    = $request->gender;
+      $user->address   = $request->address;
+      $user->password  = bcrypt($request->password);
+      $user->remember_token = Str::random(10);
+      $user->save();
+      return redirect('users')->with('message', 'El Usuario: '.$user->fullname.' fue Modificado con Exito!');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -91,8 +112,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-        //
-    }
+        $user = User::findOrFail($id);
+        $user->delete();
+
+
+        return redirect('users')->with('message','El usuario '.$user->fullname.' Fue eliminado con éxito');
+    
+}
+
+       public function confirm($id)
+       {
+         $user = User::findOrFail($id);
+        return view('users')->with('user', $user);
+       }
 }

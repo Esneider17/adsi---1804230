@@ -49,11 +49,10 @@
 											<a href="{{ url('users/'.$user->id.'/edit/') }}" class="btn btn-sm btn-primary">
 											<i class="fa fa-pencil"></i>
 										</a>
-										<form action="/users/{{$user->id}}" method="POST" style="display: inline-block;">
+										<form action="{{ url('users/'.$user->id) }}"   method="post" style="display: inline-block;">
+											@method('DELETE')
 											@csrf
-											@method('delete')
-											<input type="hidden" name="_method" value="DELETE">
-											<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Estas seguro quires eliminar el usuario')">
+											<button type="button" class="btn btn-sm btn-danger" onclick=" return confirm ('seguro de que desea eliminar este registro ?')">
 												<i class=" fa fa-trash"></i>
 											</button>
 										</form>
@@ -67,3 +66,4 @@
 	</div>
 </body>
 </html>
+s
