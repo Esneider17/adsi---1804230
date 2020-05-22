@@ -1,0 +1,62 @@
+
+.bg-custom{
+  background-color: #00796b;
+
+}
+
+.btn-custom{
+  background-color: #00796b;
+  color: #fff;
+  transition:  all 0.5s;
+}
+.btn-custom:hover{
+  background-color: #075e55;
+    color: white;
+    transform: scale(1.05);
+}
+
+.page-item.active .page-link{
+  background-color: #075e55;
+    color: white;
+    border: 1px solid #075e55;
+}
+
+.page-item .page-link{
+    color: #075e55;
+}
+ul.pagination{
+  align-items: center;
+  justify-content: center;
+}
+
+.user-photo{
+  background-position:center;
+  background-size: cover;
+  display:inline-block;
+  height: 45px;
+  width: 42px;
+}
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background-color: #075e55;
+  color: #fff;
+}
+.card-title{
+  background-color: #075e55;
+  color: #fff;
+  padding: 10px;
+}
+
+.form-search{
+
+  height: calc(1.6em + 0.75rem +2px);
+  padding: 0.37rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}

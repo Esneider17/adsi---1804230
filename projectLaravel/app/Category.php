@@ -15,4 +15,11 @@ class Category extends Model
   public function article(){
      return $this->hasOne('App\Article');
   }
+
+  public function scopeNames($categories,$q){
+    if (trim($q)) {
+      $categories->where('name', 'LIKE',"%$q%");
+    }
+
+  }
 }
